@@ -4,7 +4,7 @@ from MM import T, randomer, timeseries
 
 ## Input Parameters
 t_max=1000 # Maximum time steps to simulate for 
-fname='indep-sim.csv' # Filename to save as
+fname='uni-sim.csv' # Filename to save as
 
 fname='../raw_output/'+fname
 RS=randomer(1)
