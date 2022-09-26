@@ -3,7 +3,7 @@ import common_fn as cf
 import matplotlib.pyplot as plt
 # plt.style.use('dark_background')
 #%%
-parm_name='uni'
+parm_name='sweep-l'
 cats=['p2ex','p0ex','comp','coor','semi','indep']
 #%%
 cf.mkdirs(parm_name)

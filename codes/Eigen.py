@@ -1,14 +1,16 @@
 import numpy as np
 import pandas as pd
-from MM import T, randomer, markeig
+from MM import T, parm_sweeper, randomer, markeig
 
 ## Input Parameters
-nP=100000 # No. of parameter sets 
-fname='uni.csv' # Filename to save as
+nP=1000 # No. of parameter sets 
+parm='l'
+fname='sweep-'+parm+'.csv' # Filename to save as
 
 fname='../raw_output/'+fname
-RS=randomer(nP) # Random sample set
+RS=parm_sweeper(nP,parm)
 y=np.empty([0,4]) #Empty array to append eigenvector to
+RS=RS[1:]
 
 for i in range(len(RS)):
     tm=T(RS[i]) # Transition matrix for a set of rate

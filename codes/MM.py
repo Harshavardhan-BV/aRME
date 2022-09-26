@@ -1,4 +1,3 @@
-from tkinter import E
 import numpy as np
 from scipy.linalg import eig
 
@@ -34,13 +33,17 @@ def T(R):
         TM[:,i] /= TM[:,i].sum()
     return TM
 
-def randomer(n:int):
+def randomer(n:int,lamdis:str):
     """Generate random set of rate parameters R and interaction parameter \lambda
 
     Parameters
     ----------
     n : int
         - No. of sets to generate
+    lamdis : str
+        - Sample distribution for lambda
+            - loguni
+            - uni
 
     Returns
     -------
@@ -53,13 +56,71 @@ def randomer(n:int):
 
     Raises
     ------
-    N/A
+    \lambda distribution undefined
     """
     # Generates uniform random sets
     R = np.random.rand(n,5)
-    # Converts \lambda to uniform over log scale 
-    # R[:,4] = np.power(10,4*(R[:,4]-0.5))
-    R[:,4] = 0.01 + 99.99*R[:,4] 
+    if lamdis=='loguni':
+        # Converts \lambda to uniform in log scale over 0 to 100
+        R[:,4] = np.power(10,4*(R[:,4]-0.5))
+    elif lamdis=='uni':
+        # Converts \lambda to uniform over 0 to 100
+        R[:,4] = 0.01 + 99.99*R[:,4]
+    else:
+        raise Exception("\lambda distribution undefined")
+    return R
+
+def parm_sweeper(n:int,parm:str,lamdis:str='loguni',f_val:float=0.5):
+    """Generate parameters set R such that it sweeps over parameter r with others being constant
+
+    Parameters
+    ----------
+    n : int
+        - No. of sets to generate
+    parm : str
+        - parameter
+            - p / stayOff
+            - q / stayOn
+            - r / off
+            - s / on
+            - l / interaction parameter (lambda)
+    lamdis : str, optional
+        - Sample distribution for lambda
+            - loguni / Uniform over log scale (default)
+            - uni / Uniform over linear scale
+    f_val : int, optional
+        - Default value for fixed parameters
+
+    Returns
+    -------
+    R : NDArray (5,)
+        - Rate and Interaction Parameters
+        - [0] index: p / stayOff
+        - [1] index: q / stayOn
+        - [3] index: r / off
+        - [4] index: s / on
+        - [5] index: l / on
+
+    Raises
+    ------
+    \lambda distribution undefined
+    """
+    R = np.full((n,5),f_val)
+    p = np.linspace(0,1,n)
+    if parm == 'l':
+        if lamdis=='loguni':
+            # Converts \lambda to uniform in log scale over 0 to 100
+            R[:,4] = np.power(10,4*(p-0.5))
+        elif lamdis=='uni':
+            # Converts \lambda to uniform over 0 to 100
+            R[:,4] = 0.01 + 99.99*p
+        else:
+            raise Exception("\lambda distribution undefined")
+    else:
+        i = {'p':0 , 'q':1, 'r':2, 's':3}
+        i = i[parm]
+        R[:,i] = p
+        R[:,4] = np.ones(n)  
     return R
 
 def markeig(TM,eps:float=0.001):
@@ -92,9 +153,10 @@ def markeig(TM,eps:float=0.001):
     # Choose eigenvector with elements of same sign
     evec = evec[:,sign]
     # Normalize eigenvector
-    evec = evec/np.sum(evec) 
+    evec = evec/np.sum(evec)
     # Convert to 1D
-    evec = np.concatenate(evec)         
+    evec = np.concatenate(evec) 
+    evec=evec.astype(float) #Temporary workaround 
     return evec
 
 def statechange(TM,s:int):
