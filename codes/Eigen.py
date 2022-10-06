@@ -4,11 +4,11 @@ from MM import T, parm_sweeper, randomer, markeig
 
 ## Input Parameters
 nP=1000 # No. of parameter sets 
-parm='l'
+parm='s'
 fname='sweep-'+parm+'.csv' # Filename to save as
 
 fname='../raw_output/'+fname
-RS=parm_sweeper(nP,parm)
+RS=parm_sweeper(nP,parm,f_val=1.0)
 y=np.empty([0,4]) #Empty array to append eigenvector to
 RS=RS[1:]
 
