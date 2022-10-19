@@ -10,8 +10,9 @@ def T(R):
         - Rate and Interaction Parameters
         - [0] index: p / stayOff
         - [1] index: q / stayOn
-        - [3] index: r / off
-        - [4] index: s / on
+        - [2] index: r / off
+        - [3] index: s / on
+        - [4] index: l / interaction parameter (lambda)
 
     Returns
     -------
@@ -47,12 +48,13 @@ def randomer(n:int,lamdis:str):
 
     Returns
     -------
-    R : NDArray (5,)
+    R : NDArray (5,n)
         - Rate and Interaction Parameters
         - [0] index: p / stayOff
         - [1] index: q / stayOn
-        - [3] index: r / off
-        - [4] index: s / on
+        - [2] index: r / off
+        - [3] index: s / on
+        - [4] index: l / interaction parameter (lambda)
 
     Raises
     ------
@@ -70,8 +72,8 @@ def randomer(n:int,lamdis:str):
         raise Exception("\lambda distribution undefined")
     return R
 
-def parm_sweeper(n:int,parm:str,lamdis:str='loguni',f_val:float=0.5):
-    """Generate parameters set R such that it sweeps over parameter r with others being constant
+def parm_sweeper(n:int,parm:str,lamdis:str='loguni',f_val:float=1.0):
+    """Generate parameters set R such that it sweeps over parameter parm with others being constant
 
     Parameters
     ----------
@@ -93,13 +95,13 @@ def parm_sweeper(n:int,parm:str,lamdis:str='loguni',f_val:float=0.5):
 
     Returns
     -------
-    R : NDArray (5,)
+    R : NDArray (5,n)
         - Rate and Interaction Parameters
         - [0] index: p / stayOff
         - [1] index: q / stayOn
         - [3] index: r / off
         - [4] index: s / on
-        - [5] index: l / on
+        - [5] index: l / interaction parameter (lambda)
 
     Raises
     ------
@@ -121,6 +123,61 @@ def parm_sweeper(n:int,parm:str,lamdis:str='loguni',f_val:float=0.5):
         i = i[parm]
         R[:,i] = p
         R[:,4] = np.ones(n)  
+    return R
+
+def parm_sweeper2D(n:int,parm,lamdis:str='loguni',f_val:float=1.0):
+    """Generate parameters set R such that it sweeps over 2 parameters in parm with others being constant
+
+    Parameters
+    ----------
+    n : int
+        - No. of sets to generate per parameter 
+    parm : tuple 
+        - parameter
+            - p / stayOff
+            - q / stayOn
+            - r / off
+            - s / on
+            - l / interaction parameter (lambda)
+    lamdis : str, optional
+        - Sample distribution for lambda
+            - loguni / Uniform over log scale (default)
+            - uni / Uniform over linear scale
+    f_val : int, optional
+        - Default value for fixed parameters
+
+    Returns
+    -------
+    R : NDArray (5,n^2)
+        - Rate and Interaction Parameters
+        - [0] index: p / stayOff
+        - [1] index: q / stayOn
+        - [3] index: r / off
+        - [4] index: s / on
+        - [5] index: l / interaction parameter (lambda)
+
+    Raises
+    ------
+    \lambda distribution undefined
+    """
+    R = np.full((n**2,5),f_val)
+    p = np.linspace(0,1,n+1)
+    p=p[1:] # Drop 0
+    if 'l' in parm:
+        if lamdis=='loguni':
+            # Converts \lambda to uniform in log scale over 0 to 100
+            q = np.power(10,4*(p-0.5))
+        elif lamdis=='uni':
+            # Converts \lambda to uniform over 0 to 100
+            q = 0.01 + 99.99*p
+        else:
+            raise Exception("\lambda distribution undefined")
+    else:
+        q=p
+    i = {'p':0 , 'q':1, 'r':2, 's':3, 'l':4}
+    parms=np.meshgrid(q,p)
+    for j in range(2):
+        R[:,i[parm[j]]] = parms[j].reshape(-1)  
     return R
 
 def markeig(TM,eps:float=0.001):
