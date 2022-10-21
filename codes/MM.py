@@ -72,7 +72,7 @@ def randomer(n:int,lamdis:str):
         raise Exception("\lambda distribution undefined")
     return R
 
-def parm_sweeper(n:int,parm:str,lamdis:str='loguni',f_val:float=1.0):
+def parm_sweeper(n:int,parm:str,lamdis:str='loguni',f_val:float=1.0,l_val=1):
     """Generate parameters set R such that it sweeps over parameter parm with others being constant
 
     Parameters
@@ -91,7 +91,9 @@ def parm_sweeper(n:int,parm:str,lamdis:str='loguni',f_val:float=1.0):
             - loguni / Uniform over log scale (default)
             - uni / Uniform over linear scale
     f_val : int, optional
-        - Default value for fixed parameters
+        - Default value for fixed parameters (other than lambda)
+    l_val : int, optional
+        - Default value for l if not varied
 
     Returns
     -------
@@ -122,7 +124,7 @@ def parm_sweeper(n:int,parm:str,lamdis:str='loguni',f_val:float=1.0):
         i = {'p':0 , 'q':1, 'r':2, 's':3}
         i = i[parm]
         R[:,i] = p
-        R[:,4] = np.ones(n)  
+        R[:,4] = np.full(n,l_val) 
     return R
 
 def parm_sweeper2D(n:int,parm,lamdis:str='loguni',f_val:float=1.0):
@@ -163,7 +165,7 @@ def parm_sweeper2D(n:int,parm,lamdis:str='loguni',f_val:float=1.0):
     R = np.full((n**2,5),f_val)
     p = np.linspace(0,1,n+1)
     p=p[1:] # Drop 0
-    if 'l' in parm:
+    if ('l' in parm):
         if lamdis=='loguni':
             # Converts \lambda to uniform in log scale over 0 to 100
             q = np.power(10,4*(p-0.5))
@@ -175,6 +177,7 @@ def parm_sweeper2D(n:int,parm,lamdis:str='loguni',f_val:float=1.0):
     else:
         q=p
     i = {'p':0 , 'q':1, 'r':2, 's':3, 'l':4}
+    parm=sorted(parm)
     parms=np.meshgrid(q,p)
     for j in range(2):
         R[:,i[parm[j]]] = parms[j].reshape(-1)  

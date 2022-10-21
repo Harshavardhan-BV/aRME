@@ -18,3 +18,5 @@ for parm in combinations(parms,2):
     cf.p2vp0_cat(parm_name,cats)
     # %%
     cf.parm_box(parm_name,cats)
+    # %%
+    cf.p2vp0_2Dparm(parm)

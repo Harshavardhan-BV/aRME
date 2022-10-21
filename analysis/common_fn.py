@@ -1,4 +1,3 @@
-from locale import normalize
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -126,7 +125,6 @@ def parm_box(parm_name,cats,force=False):
     # Create a figure
     figname='../figures/'+parm_name+'/parms.svg'
     fig, ax = plt.subplots(1,2,figsize=(20,10),gridspec_kw={'width_ratios': [4, 1]})
-
     df=longdf(parm_name,cats)
     yes=df.variable!='l'
     df,dfl=df[yes],df[~yes]
@@ -146,9 +144,41 @@ def parm_box(parm_name,cats,force=False):
     fig.clf()
     plt.close(fig)
 
-# def timeseries(parm_name,):
-#     rdatname='../raw_output/'+parm_name+'.csv'
+def timeseries(parm_name,force=False):
+    rdatname='../raw_output/'+parm_name+'.csv'
+    figname='../figures/'+parm_name+'/timeseries.svg'
+    df=pd.read_csv(rdatname)
+    df['G1']=2*(df.State%2)
+    df['G2']=df.State//2
+    fig,ax=plt.figure(1,[20,10])
+    plt.plot(df.Time,df.G1,label='G1')
+    plt.plot(df.Time,df.G2,label='G2')
+    # Save figure
+    if not os.path.isfile(figname) or force: 
+        fig.savefig(figname)
+    # Clear figure
+    fig.clf()
+    plt.close(fig)
 
-#     fig,ax=plt.figure(1,[10,10])
-#     fig.clf()
-#     plt.close(fig)
+def p2vp0_2Dparm(parms,logl=True,force=False):
+    # Read the raw data
+    parm_name='sweep-'+''.join(parms)
+    rdatname='../raw_output/'+parm_name+'.csv'
+    df=pd.read_csv(rdatname)
+    if ('l' in parms) and logl:
+        df['l']=np.log(df['l'])
+    # Create a figure and plot points
+    figname='../figures/'+parm_name+'/p2vp0-2D.svg'
+    fig=plt.figure(figsize=(10,10))
+    sns.scatterplot(data=df,x='p00',y='p11',hue=parms[1],size=parms[0])
+    # Labels and legends
+    plt.xlabel(r'$p_0$')
+    plt.ylabel(r'$p_2$')
+    plt.legend()
+    fig.tight_layout()
+    # Save figure
+    if not os.path.isfile(figname) or force: 
+        fig.savefig(figname)
+    # Clear figure
+    fig.clf()
+    plt.close(fig)
