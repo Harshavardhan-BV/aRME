@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.8.20)  14 SEP 2022 12:56
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.8.20)  26 OCT 2022 12:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -862,33 +862,282 @@ Package fontspec Info: Font family 'FiraMono(0)' created for font 'Fira Mono'
 
 )) (/usr/share/texlive/texmf-dist/tex/latex/beamercolorthemeowl/beamercolorthemeowl.sty
 Package: beamercolorthemeowl 2016/03/15 v0.1.1 A visible colour theme for Beamer presentations
-) (./Slides.aux)
+) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2022/02/02 v3.17 programmable bibliographies (PK/MW)
+ (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count358
+ (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count359
+\c@listtotal=\count360
+\c@listcount=\count361
+\c@liststart=\count362
+\c@liststop=\count363
+\c@citecount=\count364
+\c@citetotal=\count365
+\c@multicitecount=\count366
+\c@multicitetotal=\count367
+\c@instcount=\count368
+\c@maxnames=\count369
+\c@minnames=\count370
+\c@maxitems=\count371
+\c@minitems=\count372
+\c@citecounter=\count373
+\c@maxcitecounter=\count374
+\c@savedcitecounter=\count375
+\c@uniquelist=\count376
+\c@uniquename=\count377
+\c@refsection=\count378
+\c@refsegment=\count379
+\c@maxextratitle=\count380
+\c@maxextratitleyear=\count381
+\c@maxextraname=\count382
+\c@maxextradate=\count383
+\c@maxextraalpha=\count384
+\c@abbrvpenalty=\count385
+\c@highnamepenalty=\count386
+\c@lownamepenalty=\count387
+\c@maxparens=\count388
+\c@parenlevel=\count389
+\blx@tempcnta=\count390
+\blx@tempcntb=\count391
+\blx@tempcntc=\count392
+\c@blx@maxsection=\count393
+\c@blx@maxsegment@0=\count394
+\blx@notetype=\count395
+\blx@parenlevel@text=\count396
+\blx@parenlevel@foot=\count397
+\c@blx@sectionciteorder@0=\count398
+\blx@entrysetcounter=\count399
+\blx@biblioinstance=\count400
+\labelnumberwidth=\skip76
+\labelalphawidth=\skip77
+\biblabelsep=\skip78
+\bibitemsep=\skip79
+\bibnamesep=\skip80
+\bibinitsep=\skip81
+\bibparsep=\skip82
+\bibhang=\skip83
+\blx@bcfin=\read3
+\blx@bcfout=\write5
+\blx@langwohyphens=\language85
+\c@mincomprange=\count401
+\c@maxcomprange=\count402
+\c@mincompwidth=\count403
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2022/02/02 v3.17 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'apa.dbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex-apa/apa.dbx
+File: apa.dbx 2020/08/28 v9.14 APA biblatex style data model
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count404
+\c@savedafterword=\count405
+\c@annotator=\count406
+\c@savedannotator=\count407
+\c@author=\count408
+\c@savedauthor=\count409
+\c@bookauthor=\count410
+\c@savedbookauthor=\count411
+\c@commentator=\count412
+\c@savedcommentator=\count413
+\c@editor=\count414
+\c@savededitor=\count415
+\c@editora=\count416
+\c@savededitora=\count417
+\c@editorb=\count418
+\c@savededitorb=\count419
+\c@editorc=\count420
+\c@savededitorc=\count421
+\c@foreword=\count422
+\c@savedforeword=\count423
+\c@holder=\count424
+\c@savedholder=\count425
+\c@introduction=\count426
+\c@savedintroduction=\count427
+\c@namea=\count428
+\c@savednamea=\count429
+\c@nameb=\count430
+\c@savednameb=\count431
+\c@namec=\count432
+\c@savednamec=\count433
+\c@translator=\count434
+\c@savedtranslator=\count435
+\c@shortauthor=\count436
+\c@savedshortauthor=\count437
+\c@shorteditor=\count438
+\c@savedshorteditor=\count439
+\c@groupauthor=\count440
+\c@savedgroupauthor=\count441
+\c@narrator=\count442
+\c@savednarrator=\count443
+\c@execproducer=\count444
+\c@savedexecproducer=\count445
+\c@execdirector=\count446
+\c@savedexecdirector=\count447
+\c@with=\count448
+\c@savedwith=\count449
+\c@labelname=\count450
+\c@savedlabelname=\count451
+\c@institution=\count452
+\c@savedinstitution=\count453
+\c@lista=\count454
+\c@savedlista=\count455
+\c@listb=\count456
+\c@savedlistb=\count457
+\c@listc=\count458
+\c@savedlistc=\count459
+\c@listd=\count460
+\c@savedlistd=\count461
+\c@liste=\count462
+\c@savedliste=\count463
+\c@listf=\count464
+\c@savedlistf=\count465
+\c@location=\count466
+\c@savedlocation=\count467
+\c@organization=\count468
+\c@savedorganization=\count469
+\c@origlocation=\count470
+\c@savedoriglocation=\count471
+\c@origpublisher=\count472
+\c@savedorigpublisher=\count473
+\c@publisher=\count474
+\c@savedpublisher=\count475
+\c@language=\count476
+\c@savedlanguage=\count477
+\c@origlanguage=\count478
+\c@savedoriglanguage=\count479
+\c@citation=\count480
+\c@savedcitation=\count481
+\c@pageref=\count482
+\c@savedpageref=\count483
+\shorthandwidth=\skip84
+\shortjournalwidth=\skip85
+\shortserieswidth=\skip86
+\shorttitlewidth=\skip87
+\shortauthorwidth=\skip88
+\shorteditorwidth=\skip89
+\locallabelnumberwidth=\skip90
+\locallabelalphawidth=\skip91
+\localshorthandwidth=\skip92
+\localshortjournalwidth=\skip93
+\localshortserieswidth=\skip94
+\localshorttitlewidth=\skip95
+\localshortauthorwidth=\skip96
+\localshorteditorwidth=\skip97
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
+\c@textcitecount=\count484
+\c@textcitetotal=\count485
+\c@textcitemaxnames=\count486
+\c@biburlbigbreakpenalty=\count487
+\c@biburlbreakpenalty=\count488
+\c@biburlnumpenalty=\count489
+\c@biburlucpenalty=\count490
+\c@biburllcpenalty=\count491
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count492
+)
+Package biblatex Info: Trying to load bibliography style 'apa'...
+Package biblatex Info: ... file 'apa.bbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex-apa/apa.bbx
+File: apa.bbx 2020/08/28 v9.14 APA biblatex references style
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count493
+\c@bbx:relatedtotal=\count494
+))
+Package biblatex Info: Trying to load citation style 'apa'...
+Package biblatex Info: ... file 'apa.cbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex-apa/apa.cbx
+File: apa.cbx 2020/08/28 v9.14 APA biblatex citation style
+Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined, overwriting.
+Package biblatex Info: Delimiter 'nameyeardelim' in context 'textcite' already defined, overwriting.
+Package biblatex Info: Delimiter 'andothersdelim' in context '' already defined, overwriting.
+Package biblatex Info: Redefining '\fullcite'.
+Package biblatex Info: Redefining '\citeauthor'.
+Package biblatex Info: Redefining '\citeyear'.
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcites'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\footcitetexts'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\smartcites'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2021-05-07 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+Package: blx-case-expl3 2022/02/02 v3.17 expl3 case changing code for biblatex
+))
+\@quotelevel=\count495
+\@quotereset=\count496
+ (./Slides.aux)
 \openout1 = `Slides.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 43.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -924,7 +1173,7 @@ LaTeX Font Info:    ... okay on input line 27.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 43.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -932,57 +1181,57 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count358
+\c@section@level=\count497
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 43.
+LaTeX Info: Redefining \pageref on input line 43.
+LaTeX Info: Redefining \nameref on input line 43.
  (./Slides.out) (./Slides.out)
-\@outlinefile=\write5
-\openout5 = `Slides.out'.
+\@outlinefile=\write6
+\openout6 = `Slides.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 27.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 43.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 27.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 43.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 27.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 27.
+(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 43.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/FiraSansLight(0)/b/n on input line 27.
+(Font)                  OT1/cmr/bx/n --> TU/FiraSansLight(0)/b/n on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/FiraSansLight(0)/b/n on input line 27.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 27.
+(Font)                  OT1/cmr/bx/n --> TU/FiraSansLight(0)/b/n on input line 43.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/FiraSansLight(0)/m/n on input line 27.
+(Font)                  OT1/cmss/m/n --> TU/FiraSansLight(0)/m/n on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/FiraSansLight(0)/m/n on input line 27.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 27.
+(Font)                  OT1/cmss/bx/n --> TU/FiraSansLight(0)/m/n on input line 43.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/FiraSansLight(0)/m/it on input line 27.
+(Font)                  OT1/cmr/m/it --> TU/FiraSansLight(0)/m/it on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/FiraSansLight(0)/m/it on input line 27.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 27.
+(Font)                  OT1/cmr/bx/it --> TU/FiraSansLight(0)/m/it on input line 43.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 27.
+(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 27.
+(Font)                  OT1/cmtt/m/n --> TU/FiraMono(0)/m/n on input line 43.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/FiraSansLight(0)/m/n --> TU/FiraSansLight(0)/b/n on input line 27.
+(Font)                  TU/FiraSansLight(0)/m/n --> TU/FiraSansLight(0)/b/n on input line 43.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/FiraSansLight(0)/m/it --> TU/FiraSansLight(0)/b/it on input line 27.
+(Font)                  TU/FiraSansLight(0)/m/it --> TU/FiraSansLight(0)/b/it on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> TU/lmr/b/n on input line 27.
+(Font)                  OT1/cmss/b/n --> TU/lmr/b/n on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/FiraSansLight(0)/b/n --> TU/FiraSansLight(0)/b/n on input line 27.
+(Font)                  TU/FiraSansLight(0)/b/n --> TU/FiraSansLight(0)/b/n on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/FiraSansLight(0)/m/n --> TU/FiraSansLight(0)/b/n on input line 27.
+(Font)                  TU/FiraSansLight(0)/m/n --> TU/FiraSansLight(0)/b/n on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/FiraSansLight(0)/m/it --> TU/FiraSansLight(0)/b/it on input line 27.
+(Font)                  TU/FiraSansLight(0)/m/it --> TU/FiraSansLight(0)/b/it on input line 43.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/FiraMono(0)/m/n --> TU/FiraMono(0)/b/n on input line 27.
+(Font)                  TU/FiraMono(0)/m/n --> TU/FiraMono(0)/b/n on input line 43.
  (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
@@ -1001,61 +1250,310 @@ Package caption Info: changepage package is loaded.
 \caption@adjustwidth@hsize=\dimen310
 \caption@adjustwidth@linewidth=\dimen311
 Package caption Info: End \AtBeginDocument code.
+Package biblatex Info: Trying to load language 'english' -> 'english-apa'...
+Package biblatex Info: ... file 'english-apa.lbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex-apa/english-apa.lbx
+File: english-apa.lbx 2020/08/28 v9.14 APA biblatex localisation
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'american' -> 'american-apa'...
+Package biblatex Info: ... file 'american-apa.lbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex-apa/american-apa.lbx
+File: american-apa.lbx 2020/08/28 v9.14 APA biblatex localisation
+Package biblatex Info: Trying to load language 'american'...
+Package biblatex Info: ... file 'american.lbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/american.lbx
+File: american.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
+))))
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout5 = `Slides.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'Slides.bbl' found.
+ (./Slides.bbl)
+Package biblatex Info: Reference section=0 on input line 43.
+Package biblatex Info: Reference segment=0 on input line 43.
  (./Slides.nav)
-Overfull \vbox (40.26942pt too high) detected at line 28
+Overfull \vbox (40.26942pt too high) detected at line 44
  []
 
 [1
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \vbox (2.05276pt too high) detected at line 85
+) [2
+
+]
+File: ./figures//allele.pdf Graphic file (type pdf)
+<use ./figures//allele.pdf>
+ [3
+
+]
+File: ./figures//allele.pdf Graphic file (type pdf)
+<use ./figures//allele.pdf>
+ [4
+
+]
+File: ./figures//allelic.pdf Graphic file (type pdf)
+<use ./figures//allelic.pdf>
+ [5
+
+]
+File: ./figures//allelic.pdf Graphic file (type pdf)
+<use ./figures//allelic.pdf>
+ [6
+
+]
+File: ./figures//allelic.pdf Graphic file (type pdf)
+<use ./figures//allelic.pdf>
+ [7
+
+]
+File: ./figures//allelic.pdf Graphic file (type pdf)
+<use ./figures//allelic.pdf>
+ [8
+
+] [9
+
+] [10
+
+] [11
+
+]
+File: ./figures//hemant.jpg Graphic file (type bmp)
+<./figures//hemant.jpg>
+File: ./figures//kishore.jpg Graphic file (type bmp)
+<./figures//kishore.jpg>
+ [12
+
+] [13
+
+] [14
+
+] [15
+
+]
+Overfull \vbox (23.89005pt too high) detected at line 160
  []
 
-[2
+[16
+
+]
+Overfull \vbox (23.89005pt too high) detected at line 160
+ []
+
+[17
+
+]
+File: ./figures//matrix_meme.jpg Graphic file (type bmp)
+<./figures//matrix_meme.jpg>
+ [18
+
+]
+File: ./figures//matrix_meme.jpg Graphic file (type bmp)
+<./figures//matrix_meme.jpg>
+ [19
+
+] [20
 
 ]
 File: ./figures//loguni-p2vp0-classified.pdf Graphic file (type pdf)
 <use ./figures//loguni-p2vp0-classified.pdf>
 File: ./figures//loguni-parms.pdf Graphic file (type pdf)
 <use ./figures//loguni-parms.pdf>
- [3
+ [21
 
 ]
-File: ./figures//uni-p2vp0-classified.pdf Graphic file (type pdf)
-<use ./figures//uni-p2vp0-classified.pdf>
-File: ./figures//uni-parms.pdf Graphic file (type pdf)
-<use ./figures//uni-parms.pdf>
- [4
+File: ./figures//loguni-p2vp0-classified.pdf Graphic file (type pdf)
+<use ./figures//loguni-p2vp0-classified.pdf>
+File: ./figures//loguni-parms.pdf Graphic file (type pdf)
+<use ./figures//loguni-parms.pdf>
+ [22
 
 ]
-\tf@nav=\write6
-\openout6 = `Slides.nav'.
+File: ./figures//sweep-p.pdf Graphic file (type pdf)
+<use ./figures//sweep-p.pdf>
+File: ./figures//sweep-q.pdf Graphic file (type pdf)
+<use ./figures//sweep-q.pdf>
+File: ./figures//sweep-r.pdf Graphic file (type pdf)
+<use ./figures//sweep-r.pdf>
+File: ./figures//sweep-s.pdf Graphic file (type pdf)
+<use ./figures//sweep-s.pdf>
+File: ./figures//sweep-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-l.pdf>
+ [23
 
-\tf@toc=\write7
-\openout7 = `Slides.toc'.
+]
+File: ./figures//sweep-p.pdf Graphic file (type pdf)
+<use ./figures//sweep-p.pdf>
+File: ./figures//sweep-q.pdf Graphic file (type pdf)
+<use ./figures//sweep-q.pdf>
+File: ./figures//sweep-r.pdf Graphic file (type pdf)
+<use ./figures//sweep-r.pdf>
+File: ./figures//sweep-s.pdf Graphic file (type pdf)
+<use ./figures//sweep-s.pdf>
+File: ./figures//sweep-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-l.pdf>
+ [24
 
-\tf@snm=\write8
-\openout8 = `Slides.snm'.
+]
+File: ./figures//sweep-p.pdf Graphic file (type pdf)
+<use ./figures//sweep-p.pdf>
+File: ./figures//sweep-q.pdf Graphic file (type pdf)
+<use ./figures//sweep-q.pdf>
+File: ./figures//sweep-r.pdf Graphic file (type pdf)
+<use ./figures//sweep-r.pdf>
+File: ./figures//sweep-s.pdf Graphic file (type pdf)
+<use ./figures//sweep-s.pdf>
+File: ./figures//sweep-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-l.pdf>
+ [25
+
+]
+File: ./figures//sweep-p.pdf Graphic file (type pdf)
+<use ./figures//sweep-p.pdf>
+File: ./figures//sweep-q.pdf Graphic file (type pdf)
+<use ./figures//sweep-q.pdf>
+File: ./figures//sweep-r.pdf Graphic file (type pdf)
+<use ./figures//sweep-r.pdf>
+File: ./figures//sweep-s.pdf Graphic file (type pdf)
+<use ./figures//sweep-s.pdf>
+File: ./figures//sweep-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-l.pdf>
+ [26
+
+]
+File: ./figures//sweep-p.pdf Graphic file (type pdf)
+<use ./figures//sweep-p.pdf>
+File: ./figures//sweep-q.pdf Graphic file (type pdf)
+<use ./figures//sweep-q.pdf>
+File: ./figures//sweep-r.pdf Graphic file (type pdf)
+<use ./figures//sweep-r.pdf>
+File: ./figures//sweep-s.pdf Graphic file (type pdf)
+<use ./figures//sweep-s.pdf>
+File: ./figures//sweep-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-l.pdf>
+ [27
+
+]
+File: ./figures//sweep-sl-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-sl-l.pdf>
+File: ./figures//sweep-sl-s.pdf Graphic file (type pdf)
+<use ./figures//sweep-sl-s.pdf>
+File: ./figures//sweep-rl-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-rl-l.pdf>
+File: ./figures//sweep-rl-r.pdf Graphic file (type pdf)
+<use ./figures//sweep-rl-r.pdf>
+ [28
+
+]
+File: ./figures//sweep-sl-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-sl-l.pdf>
+File: ./figures//sweep-sl-s.pdf Graphic file (type pdf)
+<use ./figures//sweep-sl-s.pdf>
+File: ./figures//sweep-rl-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-rl-l.pdf>
+File: ./figures//sweep-rl-r.pdf Graphic file (type pdf)
+<use ./figures//sweep-rl-r.pdf>
+ [29
+
+]
+File: ./figures//sweep-pl-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-pl-l.pdf>
+File: ./figures//sweep-pl-p.pdf Graphic file (type pdf)
+<use ./figures//sweep-pl-p.pdf>
+File: ./figures//sweep-ql-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-ql-l.pdf>
+File: ./figures//sweep-ql-q.pdf Graphic file (type pdf)
+<use ./figures//sweep-ql-q.pdf>
+ [30
+
+]
+File: ./figures//sweep-pl-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-pl-l.pdf>
+File: ./figures//sweep-pl-p.pdf Graphic file (type pdf)
+<use ./figures//sweep-pl-p.pdf>
+File: ./figures//sweep-ql-l.pdf Graphic file (type pdf)
+<use ./figures//sweep-ql-l.pdf>
+File: ./figures//sweep-ql-q.pdf Graphic file (type pdf)
+<use ./figures//sweep-ql-q.pdf>
+ [31
+
+] [32
+
+] [33
+
+] [34
+
+] [35
+
+] [36
+
+] [37
+
+] [38
+
+] [39
+
+] [40
+
+] [41
+
+] [42
+
+] [43
+
+] [44
+
+]
+File: beamericonarticle.pdf Graphic file (type pdf)
+<use beamericonarticle.pdf>
+File: beamericonarticle.pdf Graphic file (type pdf)
+<use beamericonarticle.pdf>
+File: beamericonarticle.pdf Graphic file (type pdf)
+<use beamericonarticle.pdf>
+ [45
+
+]
+\tf@nav=\write7
+\openout7 = `Slides.nav'.
+
+\tf@toc=\write8
+\openout8 = `Slides.toc'.
+
+\tf@snm=\write9
+\openout9 = `Slides.snm'.
 
  (./Slides.aux)
 Package rerunfilecheck Info: File `Slides.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 8099F014D8E4A6C5310DB34677C4F3B0;528.
+Package logreq Info: Writing requests to 'Slides.run.xml'.
+\openout1 = `Slides.run.xml'.
+
  ) 
 Here is how much of TeX's memory you used:
- 28936 strings out of 476788
- 621286 string characters out of 5822420
- 968228 words of memory out of 6000000
- 48446 multiletter control sequences out of 15000+600000
- 408123 words of font info for 79 fonts, out of 8000000 for 9000
+ 37065 strings out of 476788
+ 786943 string characters out of 5822420
+ 1625146 words of memory out of 6000000
+ 56495 multiletter control sequences out of 15000+600000
+ 410653 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 128i,13n,134p,1862b,1235s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 128i,13n,134p,1862b,5068s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Slides.xdv (4 pages, 37912 bytes).
+Output written on Slides.xdv (45 pages, 322140 bytes).
