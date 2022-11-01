@@ -160,17 +160,16 @@ def timeseries(parm_name,force=False):
     fig.clf()
     plt.close(fig)
 
-def p2vp0_2Dparm(parms,logl=True,force=False):
+def p2vp0_parm(parm_name,plt_parm,logl=True,force=False):
     # Read the raw data
-    parm_name='sweep-'+''.join(parms)
     rdatname='../raw_output/'+parm_name+'.csv'
     df=pd.read_csv(rdatname)
-    if ('l' in parms) and logl:
+    if logl:
         df['l']=np.log(df['l'])
     # Create a figure and plot points
-    figname='../figures/'+parm_name+'/p2vp0-2D.svg'
+    figname='../figures/'+parm_name+'/p2vp0-'+plt_parm+'.svg'
     fig=plt.figure(figsize=(10,10))
-    sns.scatterplot(data=df,x='p00',y='p11',hue=parms[1],size=parms[0])
+    sns.scatterplot(data=df,x='p00',y='p11',hue=plt_parm,edgecolor='none',palette='coolwarm')
     # Labels and legends
     plt.xlabel(r'$p_0$')
     plt.ylabel(r'$p_2$')

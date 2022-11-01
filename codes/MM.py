@@ -25,10 +25,10 @@ def T(R):
     """
     # Generate matrix from rates
     TM = np.array(
-        [[R[0]**2,R[0]*R[2],R[0]*R[2],R[2]**2],
-        [R[0]*R[3],R[0]*R[1],R[4]*R[2]*R[3],R[4]*R[1]*R[2]],
-        [R[0]*R[3],R[4]*R[2]*R[3],R[0]*R[1],R[4]*R[1]*R[2]],
-        [R[3]*R[3],R[4]*R[1]*R[3],R[4]*R[1]*R[3],(R[4]*R[1])**2]])
+        [[R[0]**2,R[0]*R[2],R[0]*R[2],0],
+        [R[0]*R[3],R[0]*R[1],0,R[4]*R[1]*R[2]],
+        [R[0]*R[3],0,R[0]*R[1],R[4]*R[1]*R[2]],
+        [0,R[4]*R[1]*R[3],R[4]*R[1]*R[3],(R[4]*R[1])**2]])
     # Normalize each column to 1 (for probability)
     for i in range(4):
         TM[:,i] /= TM[:,i].sum()
