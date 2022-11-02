@@ -19,7 +19,7 @@ for parm in parms:
         y=np.append(y,[ev],axis=0) # Eigenvectors added row wise
 
     y=np.append(RS,y,axis=1) # Rates and respective eigenvectors column wise
-    df=pd.DataFrame(y,columns=['p','q','r','s','l','p00','p01','p10','p11']) # Convert to dataframe
+    df=pd.DataFrame(y,columns=['p','q','r','s','l','d','p00','p01','p10','p11']) # Convert to dataframe
     df.to_csv(fname,index=False)
 
 

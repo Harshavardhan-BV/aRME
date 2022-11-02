@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from itertools import combinations
 #%%
 cats=['p2ex','p0ex','comp','coor','semi','indep']
-parms=('p','q','r','s','l')
+parms=('p','q','r','s','l','d')
 for parm in combinations(parms,2):
     parm_name='sweep-'+''.join(parm)
     #%%

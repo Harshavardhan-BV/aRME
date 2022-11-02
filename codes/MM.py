@@ -6,13 +6,15 @@ def T(R):
     
     Parameters
     ----------
-    R : ndarray (5,)
+    R : ndarray (6,)
         - Rate and Interaction Parameters
         - [0] index: p / stayOff
         - [1] index: q / stayOn
         - [2] index: r / off
         - [3] index: s / on
-        - [4] index: l / interaction parameter (lambda)
+        - [4] index: l / coordination parameter (lambda)
+        - [5] index: d / competition parameter (delta)
+
 
     Returns
     -------
@@ -26,8 +28,8 @@ def T(R):
     # Generate matrix from rates
     TM = np.array(
         [[R[0]**2,R[0]*R[2],R[0]*R[2],R[2]**2],
-        [R[0]*R[3],R[0]*R[1],R[4]*R[2]*R[3],R[4]*R[1]*R[2]],
-        [R[0]*R[3],R[4]*R[2]*R[3],R[0]*R[1],R[4]*R[1]*R[2]],
+        [R[0]*R[3],R[0]*R[1],R[2]*R[3],R[5]*R[1]*R[2]],
+        [R[0]*R[3],R[2]*R[3],R[0]*R[1],R[5]*R[1]*R[2]],
         [R[3]*R[3],R[4]*R[1]*R[3],R[4]*R[1]*R[3],(R[4]*R[1])**2]])
     # Normalize each column to 1 (for probability)
     for i in range(4):
@@ -42,32 +44,33 @@ def randomer(n:int,lamdis:str):
     n : int
         - No. of sets to generate
     lamdis : str
-        - Sample distribution for lambda
+        - Sample distribution for lambda and delta
             - loguni
             - uni
 
     Returns
     -------
-    R : NDArray (5,n)
+    R : NDArray (6,n)
         - Rate and Interaction Parameters
         - [0] index: p / stayOff
         - [1] index: q / stayOn
         - [2] index: r / off
         - [3] index: s / on
-        - [4] index: l / interaction parameter (lambda)
+        - [4] index: l / coordination parameter (lambda)
+        - [5] index: d / competition parameter (delta)
 
     Raises
     ------
     \lambda distribution undefined
     """
     # Generates uniform random sets
-    R = np.random.rand(n,5)
+    R = np.random.rand(n,6)
     if lamdis=='loguni':
-        # Converts \lambda to uniform in log scale over 0 to 100
-        R[:,4] = np.power(10,4*(R[:,4]-0.5))
+        # Converts \lambda and \delta to uniform in log scale over 0 to 100
+        R[:,4:6] = np.power(10,4*(R[:,4:6]-0.5))
     elif lamdis=='uni':
-        # Converts \lambda to uniform over 0 to 100
-        R[:,4] = 0.01 + 99.99*R[:,4]
+        # Converts \lambda and \delta to uniform over 0 to 100
+        R[:,4:6] = 0.01 + 99.99*R[:,4:6]
     else:
         raise Exception("\lambda distribution undefined")
     return R
@@ -85,7 +88,8 @@ def parm_sweeper(n:int,parm:str,lamdis:str='loguni',f_val:float=1.0,l_val=1):
             - q / stayOn
             - r / off
             - s / on
-            - l / interaction parameter (lambda)
+            - l / coordination parameter (lambda)
+            - d / competition parameter (delta)
     lamdis : str, optional
         - Sample distribution for lambda
             - loguni / Uniform over log scale (default)
@@ -97,34 +101,35 @@ def parm_sweeper(n:int,parm:str,lamdis:str='loguni',f_val:float=1.0,l_val=1):
 
     Returns
     -------
-    R : NDArray (5,n)
+    R : NDArray (6,n)
         - Rate and Interaction Parameters
         - [0] index: p / stayOff
         - [1] index: q / stayOn
-        - [3] index: r / off
-        - [4] index: s / on
-        - [5] index: l / interaction parameter (lambda)
+        - [2] index: r / off
+        - [3] index: s / on
+        - [4] index: l / coordination parameter (lambda)
+        - [5] index: d / competition parameter (delta)
 
     Raises
     ------
     \lambda distribution undefined
     """
-    R = np.full((n,5),f_val)
+    R = np.full((n,6),f_val)
     p = np.linspace(0,1,n)
-    if parm == 'l':
+    i = {'p':0 , 'q':1, 'r':2, 's':3, 'l':4, 'd':5}
+    i = i[parm]
+    if (parm == 'l' or parm == 'd'):
         if lamdis=='loguni':
-            # Converts \lambda to uniform in log scale over 0 to 100
-            R[:,4] = np.power(10,4*(p-0.5))
+            # Converts \lambda or \delta to uniform in log scale over 0 to 100
+            R[:,i] = np.power(10,4*(p-0.5))
         elif lamdis=='uni':
-            # Converts \lambda to uniform over 0 to 100
-            R[:,4] = 0.01 + 99.99*p
+            # Converts \lambda or \delta to uniform over 0 to 100
+            R[:,i] = 0.01 + 99.99*p
         else:
             raise Exception("\lambda distribution undefined")
     else:
-        i = {'p':0 , 'q':1, 'r':2, 's':3}
-        i = i[parm]
         R[:,i] = p
-        R[:,4] = np.full(n,l_val) 
+        R[:,4:6] = np.full((n,2),l_val) 
     return R
 
 def parm_sweeper2D(n:int,parm,lamdis:str='loguni',f_val:float=1.0):
@@ -150,22 +155,23 @@ def parm_sweeper2D(n:int,parm,lamdis:str='loguni',f_val:float=1.0):
 
     Returns
     -------
-    R : NDArray (5,n^2)
+    R : NDArray (6,n^2)
         - Rate and Interaction Parameters
         - [0] index: p / stayOff
         - [1] index: q / stayOn
-        - [3] index: r / off
-        - [4] index: s / on
-        - [5] index: l / interaction parameter (lambda)
+        - [2] index: r / off
+        - [3] index: s / on
+        - [4] index: l / coordination parameter (lambda)
+        - [5] index: d / competition parameter (delta)
 
     Raises
     ------
     \lambda distribution undefined
     """
-    R = np.full((n**2,5),f_val)
+    R = np.full((n**2,6),f_val)
     p = np.linspace(0,1,n+1)
     p=p[1:] # Drop 0
-    if ('l' in parm):
+    if ('l' in parm) or ('d' in parm):
         if lamdis=='loguni':
             # Converts \lambda to uniform in log scale over 0 to 100
             q = np.power(10,4*(p-0.5))
@@ -174,9 +180,11 @@ def parm_sweeper2D(n:int,parm,lamdis:str='loguni',f_val:float=1.0):
             q = 0.01 + 99.99*p
         else:
             raise Exception("\lambda distribution undefined")
+        if ('l' in parm) and ('d' in parm):
+            p=q
     else:
         q=p
-    i = {'p':0 , 'q':1, 'r':2, 's':3, 'l':4}
+    i = {'p':0 , 'q':1, 'r':2, 's':3, 'l':4, 'd':5}
     parm=sorted(parm)
     parms=np.meshgrid(q,p)
     for j in range(2):

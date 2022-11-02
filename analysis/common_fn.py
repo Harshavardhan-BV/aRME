@@ -116,7 +116,7 @@ def longdf(parm_name,cats):
     for cat in cats:
         datfname='../analysed_data/'+parm_name+'/'+cat+'.csv'
         df=pd.read_csv(datfname)
-        tdf=pd.melt(df.loc[:,'p':'l'])
+        tdf=pd.melt(df.loc[:,'p':'d'])
         tdf['Category']=cat
         ndf=pd.concat([ndf,tdf])
     return ndf
@@ -124,9 +124,9 @@ def longdf(parm_name,cats):
 def parm_box(parm_name,cats,force=False):
     # Create a figure
     figname='../figures/'+parm_name+'/parms.svg'
-    fig, ax = plt.subplots(1,2,figsize=(20,10),gridspec_kw={'width_ratios': [4, 1]})
+    fig, ax = plt.subplots(1,2,figsize=(25,10),gridspec_kw={'width_ratios': [4, 2]})
     df=longdf(parm_name,cats)
-    yes=df.variable!='l'
+    yes=np.logical_and(df.variable!='l',df.variable!='d')
     df,dfl=df[yes],df[~yes]
     # Plot boxplots, lambda scale different so in a subplot
     b1=sns.boxplot(x="variable", y="value",hue="Category", data=df,ax=ax[0])
@@ -134,7 +134,7 @@ def parm_box(parm_name,cats,force=False):
     b2=sns.boxplot(x="variable", y="value",hue="Category", data=dfl,ax=ax[1])
     # Labels and legends
     ax[0].legend([],[], frameon=False)
-    b2.set(xlabel=None,ylabel=None,xticklabels=[r'$\lambda$'])
+    b2.set(xlabel=None,ylabel=None,xticklabels=[r'$\lambda$',r'$\delta$'])
     ax[1].legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
     fig.tight_layout()
     # Save figure
