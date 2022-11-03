@@ -10,13 +10,13 @@ for parm in combinations(parms,2):
     #%%
     cf.mkdirs(parm_name)
     # %%
-    cf.classify(parm_name,cats,normalize='max')
+    cf.classify(parm_name,cats,normalize='max',force=True)
     # %%
-    cf.p2vp0(parm_name)
+    cf.p2vp0(parm_name,force=True)
     # %%
-    cf.p2vp0_cat(parm_name,cats)
+    cf.p2vp0_cat(parm_name,cats,force=True)
     # %%
-    cf.parm_box(parm_name,cats)
+    cf.parm_box(parm_name,cats,force=True)
     # %%
     cf.p2vp0_parm(parm_name,parm[0])
     cf.p2vp0_parm(parm_name,parm[1])
